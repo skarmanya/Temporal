@@ -12,7 +12,7 @@ proxy:
   Demo:
     container_name: Demo
     build:
-      context: ./Demo/Temporal_SpringBoot-master
+      context: ./Demo/Temporal_Springoot-master
       dockerfile: Dockerfile
     ports:
       - "9002:9002"
