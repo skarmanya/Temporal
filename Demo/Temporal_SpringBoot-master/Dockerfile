@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:11
 
 LABEL COMPANY="Publicis Sapient"
 LABEL APPLICATION="Swiggy Clone"
