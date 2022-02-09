@@ -19,3 +19,8 @@ services:
       - "8001:8001"
     networks:
       - temporal-network
+
+networks:
+  temporal-network:
+    driver: bridge
+    name: temporal-network
