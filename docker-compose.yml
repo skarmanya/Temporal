@@ -11,7 +11,7 @@ services:
   Demo:
     container_name: demo
     build:
-      context: ./Demo/Temporal_Springoot-master
+      context: ./Demo/Temporal_SpringBoot-master
       dockerfile: Dockerfile
     ports:
       - "9002:9002"
