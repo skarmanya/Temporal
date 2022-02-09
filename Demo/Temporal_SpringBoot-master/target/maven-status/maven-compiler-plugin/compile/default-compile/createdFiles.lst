@@ -1,8 +1,0 @@
-com\clone\workflow\controller\MainController.class
-com\clone\workflow\temporal\ActivityImpl.class
-com\clone\workflow\temporal\Activity.class
-com\clone\workflow\temporal\WorkFlow.class
-com\clone\workflow\SwiggyCloneApplication.class
-com\clone\workflow\service\OrderService.class
-com\clone\workflow\config\TemporalConfig.class
-com\clone\workflow\temporal\WorkflowImpl.class
