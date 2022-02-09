@@ -7,6 +7,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "9002:9002" 
+    networks:
+      - temporal-network
 
   demo:
     container_name: demo
@@ -15,5 +17,5 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8001:8001"
-    links:
-      - proxy
+    networks:
+      - temporal-network
