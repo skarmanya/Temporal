@@ -1,13 +1,12 @@
 version: "3"
 services:
-proxy:
+  proxy:
     container_name: proxy
     build:
       context: ./proxy/proxy
       dockerfile: Dockerfile
     ports:
       - "8001:8001" 
-
 
   Demo:
     container_name: Demo
