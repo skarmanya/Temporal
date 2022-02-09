@@ -9,7 +9,7 @@ services:
       - "8001:8001" 
 
   Demo:
-    container_name: Demo
+    container_name: demo
     build:
       context: ./Demo/Temporal_Springoot-master
       dockerfile: Dockerfile
