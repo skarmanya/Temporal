@@ -8,7 +8,7 @@ services:
     ports:
       - "8001:8001" 
 
-  Demo:
+  demo:
     container_name: demo
     build:
       context: ./Demo/Temporal_SpringBoot-master
