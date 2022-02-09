@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Temporal_SpringBoot-master/.mvn/wrapper"/>
+	<classpathentry kind="src" path="Temporal_SpringBoot-master/src/main/java"/>
+	<classpathentry kind="src" path="Temporal_SpringBoot-master/src/test/java"/>
+	<classpathentry kind="lib" path="__MACOSX/Temporal_SpringBoot-master/.mvn/wrapper/._maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="Temporal_SpringBoot-master/target/Demo-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="output" path="Temporal_SpringBoot-master/target/classes"/>
+</classpath>
