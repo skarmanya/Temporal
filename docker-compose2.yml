@@ -1,0 +1,31 @@
+version: "3.5"
+services:
+  proxy:
+      container_name: proxy
+      depends_on:
+        - temporal
+      build:
+        context: ./proxy/proxy
+        dockerfile: Dockerfile
+      ports:
+        - "9002:9002" 
+      networks:
+        - swiggy-temporal-network
+
+    demo:
+      container_name: demo
+      depends_on:
+        - proxy
+        - temporal
+      build:
+        context: ./Demo/Temporal_SpringBoot-master
+        dockerfile: Dockerfile
+      ports:
+        - "8001:8001"
+      networks:
+        - swiggy-temporal-network
+
+networks:
+  swiggy-temporal-network:
+    external:
+      name: temporal-network
