@@ -21,7 +21,9 @@ services:
       - "8001:8001"
     networks:
       - swiggy-temporal-network
-
+    mem_limit: 300m
+    mem_reservation: 200M
+    cpus: 0.1
 networks:
   swiggy-temporal-network:
     external:
