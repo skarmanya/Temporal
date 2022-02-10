@@ -16,7 +16,7 @@ import io.temporal.worker.WorkerFactory;
 @Configuration
 public class TemporalConfig {
 
-	private String temporalServiceAddress = "http://temporal:7233";
+	private String temporalServiceAddress = "temporal:7233";
 
 	private String temporalNamespace = "default";
 
