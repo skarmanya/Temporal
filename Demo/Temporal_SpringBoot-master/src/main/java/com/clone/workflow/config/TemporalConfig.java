@@ -16,9 +16,9 @@ import io.temporal.worker.WorkerFactory;
 @Configuration
 public class TemporalConfig {
 
-	private String temporalServiceAddress = "http://172.22.0.4:7233";
+	private String temporalServiceAddress = "http://temporal:7233";
 
-	private String temporalNamespace = "temporal-system";
+	private String temporalNamespace = "default";
 
 	@Bean
 	public WorkflowServiceStubs workflowServiceStubs() {
