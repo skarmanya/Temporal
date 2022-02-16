@@ -42,7 +42,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">a65a7d116aaea44489d3a73d07703c85-578711652.us-east-1.elb.amazonaws.com</stringProp>
+          <stringProp name="HTTPSampler.domain">a57ebdc7a037b4ebbb6f8154db06405c-180737018.us-east-1.elb.amazonaws.com</stringProp>
           <stringProp name="HTTPSampler.port">8001</stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
