@@ -40,9 +40,9 @@ public class TemporalConfig {
 		
 		WorkerFactoryOptions factoryOptions = 
 				WorkerFactoryOptions.newBuilder()
-				.setMaxWorkflowThreadCount(10000)
-				.setWorkflowCacheSize(6000)
-				.setWorkflowHostLocalPollThreadCount(10)
+//				.setMaxWorkflowThreadCount(10000)
+//				.setWorkflowCacheSize(6000)
+//				.setWorkflowHostLocalPollThreadCount(10)
 				.build();
 				
 		return WorkerFactory.newInstance(workflowClient,factoryOptions);
