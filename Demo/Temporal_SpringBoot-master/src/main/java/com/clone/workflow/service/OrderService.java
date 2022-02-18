@@ -22,9 +22,11 @@ public class OrderService {
 	@Autowired
 	OrderDetails orderDetails;
 
-	public void placeOrder(String workflowId, CartPojo cartDetails) {
+	public CartPojo placeOrder(String workflowId, CartPojo cartDetails) {
 		WorkFlow workflow = createWorkFlowConnection(workflowId);
-		WorkflowClient.start(workflow::startApprovalWorkflow, workflowId, cartDetails);
+		//WorkflowClient.start(workflow::startApprovalWorkflow, workflowId, cartDetails);
+		
+		return workflow.startApprovalWorkflow(workflowId, cartDetails);
 	}
 
 

@@ -11,6 +11,6 @@ public interface WorkFlow {
 	public static final String QUEUE_NAME = "Customer_Order";
 
 	@WorkflowMethod
-	void startApprovalWorkflow(String workFlowId, CartPojo cartDetails);
+	CartPojo startApprovalWorkflow(String workFlowId, CartPojo cartDetails);
 
 }

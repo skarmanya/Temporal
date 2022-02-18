@@ -6,22 +6,30 @@ public class CartPojo {
 	String productId;
 	String unitPrice;
 	String quantity;
-	
+	String paymentStatus;
 
 	
 	
 	
+	public String getPaymentStatus() {
+		return paymentStatus;
+	}
+	public void setPaymentStatus(String paymentStatus) {
+		this.paymentStatus = paymentStatus;
+	}
 	public CartPojo() {
 		this.productName = "";
 		this.productId = "";
 		this.unitPrice = "";
 		this.quantity = "";
+		this.paymentStatus = "";
 	}
-	public CartPojo(String productName, String productId, String unitPrice, String quantity) {
+	public CartPojo(String productName, String productId, String unitPrice, String quantity, String paymentStatus) {
 		this.productName = productName;
 		this.productId = productId;
 		this.unitPrice = unitPrice;
 		this.quantity = quantity;
+		this.paymentStatus = paymentStatus;
 	}
 	public String getProductName() {
 		return productName;

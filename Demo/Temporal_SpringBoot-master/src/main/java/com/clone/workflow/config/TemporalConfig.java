@@ -1,5 +1,7 @@
 package com.clone.workflow.config;
 
+import java.time.Duration;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
@@ -11,14 +13,15 @@ import io.temporal.client.WorkflowClientOptions;
 import io.temporal.serviceclient.WorkflowServiceStubs;
 import io.temporal.serviceclient.WorkflowServiceStubsOptions;
 import io.temporal.worker.WorkerFactory;
+import io.temporal.worker.WorkerFactoryOptions;
 
 @Component
 @Configuration
 public class TemporalConfig {
 
-	private String temporalServiceAddress = "172.20.182.128:7233";
+	private String temporalServiceAddress = "temporal:7233";
 
-	private String temporalNamespace = "temporal-system";
+	private String temporalNamespace = "default";
 
 	@Bean
 	public WorkflowServiceStubs workflowServiceStubs() {
@@ -34,7 +37,15 @@ public class TemporalConfig {
 
 	@Bean
 	public WorkerFactory workerFactory(WorkflowClient workflowClient) {
-		return WorkerFactory.newInstance(workflowClient);
+		
+		WorkerFactoryOptions factoryOptions = 
+				WorkerFactoryOptions.newBuilder()
+				.setMaxWorkflowThreadCount(10000)
+				.setWorkflowCacheSize(6000)
+				.setWorkflowHostLocalPollThreadCount(10)
+				.build();
+				
+		return WorkerFactory.newInstance(workflowClient,factoryOptions);
 	}
 
 	@Bean

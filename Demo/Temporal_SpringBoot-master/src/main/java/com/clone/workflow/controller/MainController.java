@@ -18,14 +18,11 @@ public class MainController {
 	@Autowired
 	OrderService orderService;
 	
-	@Autowired
-	OrderDetails orderDetails;
-	
 
 	@PostMapping("/startWorkflow")
-	public LinkedHashMap<String, String> createOrder(@RequestParam("id") String id, @RequestBody CartPojo cartDetails) {
-	orderService.placeOrder(id, cartDetails);
-		return orderDetails.orderRepo;
+	public CartPojo createOrder(@RequestParam("id") String id, @RequestBody CartPojo cartDetails) {
+	 return orderService.placeOrder(id, cartDetails);
+		//return orderDetails.orderRepo;
 	}
 
 }

@@ -11,6 +11,7 @@ import com.clone.workflow.temporal.WorkflowImpl;
 
 import io.temporal.worker.Worker;
 import io.temporal.worker.WorkerFactory;
+import io.temporal.worker.WorkerOptions;
 
 @SpringBootApplication
 @EnableFeignClients
@@ -20,7 +21,16 @@ public class SwiggyCloneApplication {
 		ConfigurableApplicationContext appContext = SpringApplication.run(SwiggyCloneApplication.class, args);
 		WorkerFactory factory = appContext.getBean(WorkerFactory.class);
 		Activity signUpActivity = appContext.getBean(Activity.class);
-		Worker worker = factory.newWorker(WorkFlow.QUEUE_NAME);
+		
+		WorkerOptions options = WorkerOptions.newBuilder()
+				.setMaxConcurrentActivityExecutionSize(5000)
+				.setMaxConcurrentWorkflowTaskExecutionSize(5000)
+				.setMaxConcurrentLocalActivityExecutionSize(5000)
+				.setActivityPollThreadCount(10)
+				.build();
+		
+		Worker worker = factory.newWorker(WorkFlow.QUEUE_NAME,options);
+
 		worker.registerWorkflowImplementationTypes(WorkflowImpl.class);
 		worker.registerActivitiesImplementations(signUpActivity);
 		factory.start();

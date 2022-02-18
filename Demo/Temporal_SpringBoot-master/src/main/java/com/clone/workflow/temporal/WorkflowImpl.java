@@ -29,7 +29,7 @@ public class WorkflowImpl implements WorkFlow {
 	public boolean isPaymentDone = false;
 
 	@Override
-	public void startApprovalWorkflow(String workflowId, CartPojo cartDetails) {
+	public CartPojo startApprovalWorkflow(String workflowId, CartPojo cartDetails) {
 		
 		activity.placeOrder();
 
@@ -38,13 +38,16 @@ public class WorkflowImpl implements WorkFlow {
 			isPaymentDone = true;
 		}
 
-		orderDetails.setOrderStatus(cartDetails, responseFromPaymentService);
+		
 		Workflow.await(() -> isPaymentDone);
 		System.out.println("***** Please wait till we confirm delivery status");
-		isOrderDelivered = activity.setOrderDelivered();
-		Workflow.await(() -> isOrderDelivered);
-
 		
+//		isOrderDelivered = activity.setOrderDelivered();
+//		Workflow.await(() -> isOrderDelivered);
+		
+		cartDetails.setPaymentStatus(responseFromPaymentService);
+		
+		return cartDetails;
 		
 
 	}

@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class PaymentProxyController {
 	
 	
-	
 	@GetMapping("/payment/{id}")
 	public String confirmPayment(@PathVariable String id) {
 		System.out.println("Payment Processing..... ");
