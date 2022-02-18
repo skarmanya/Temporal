@@ -19,7 +19,7 @@ import io.temporal.worker.WorkerFactoryOptions;
 @Configuration
 public class TemporalConfig {
 
-	private String temporalServiceAddress = "temporal:7233";
+	private String temporalServiceAddress = "http://172.20.161.103:7233";
 
 	private String temporalNamespace = "default";
 
@@ -40,9 +40,9 @@ public class TemporalConfig {
 		
 		WorkerFactoryOptions factoryOptions = 
 				WorkerFactoryOptions.newBuilder()
-//				.setMaxWorkflowThreadCount(10000)
-//				.setWorkflowCacheSize(6000)
-//				.setWorkflowHostLocalPollThreadCount(10)
+				.setMaxWorkflowThreadCount(10000)
+				.setWorkflowCacheSize(6000)
+				.setWorkflowHostLocalPollThreadCount(10)
 				.build();
 				
 		return WorkerFactory.newInstance(workflowClient,factoryOptions);
