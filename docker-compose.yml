@@ -3,8 +3,7 @@ services:
   proxy:
     container_name: proxy
     build:
-      context: ./proxy/proxy
-      dockerfile: Dockerfile
+      image: skarmanya/temporal_proxy:v2
     ports:
       - "9002:9002" 
     networks:
@@ -15,8 +14,7 @@ services:
     depends_on:
       - proxy
     build:
-      context: ./Demo/Temporal_SpringBoot-master
-      dockerfile: Dockerfile
+      image: skarmanya/temporal_demo:v16
     ports:
       - "8001:8001"
     networks:
