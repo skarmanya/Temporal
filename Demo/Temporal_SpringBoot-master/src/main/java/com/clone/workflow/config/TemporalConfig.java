@@ -21,7 +21,7 @@ public class TemporalConfig {
 
 	private String temporalServiceAddress = "172.20.161.103:7233";
 
-	private String temporalNamespace = "default";
+	private String temporalNamespace = "temporal-system";
 
 	@Bean
 	public WorkflowServiceStubs workflowServiceStubs() {
