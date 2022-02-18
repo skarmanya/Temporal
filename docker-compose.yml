@@ -2,8 +2,7 @@ version: "3"
 services:
   proxy:
     container_name: proxy
-    build:
-      image: skarmanya/temporal_proxy:v2
+    image: skarmanya/temporal_proxy:v2
     ports:
       - "9002:9002" 
     networks:
@@ -13,8 +12,7 @@ services:
     container_name: demo
     depends_on:
       - proxy
-    build:
-      image: skarmanya/temporal_demo:v16
+    image: skarmanya/temporal_demo:v16
     ports:
       - "8001:8001"
     networks:
