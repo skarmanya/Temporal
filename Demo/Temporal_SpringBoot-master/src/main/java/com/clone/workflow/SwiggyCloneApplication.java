@@ -23,10 +23,10 @@ public class SwiggyCloneApplication {
 		Activity signUpActivity = appContext.getBean(Activity.class);
 		
 		WorkerOptions options = WorkerOptions.newBuilder()
-//				.setMaxConcurrentActivityExecutionSize(5000)
-//				.setMaxConcurrentWorkflowTaskExecutionSize(5000)
-//				.setMaxConcurrentLocalActivityExecutionSize(5000)
-//				.setActivityPollThreadCount(10)
+				.setMaxConcurrentActivityExecutionSize(400)
+				.setMaxConcurrentWorkflowTaskExecutionSize(400)
+				.setMaxConcurrentLocalActivityExecutionSize(600)
+				.setActivityPollThreadCount(10)
 				.build();
 		
 		Worker worker = factory.newWorker(WorkFlow.QUEUE_NAME,options);

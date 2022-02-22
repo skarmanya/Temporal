@@ -15,9 +15,15 @@ import io.temporal.workflow.Workflow;
 public class WorkflowImpl implements WorkFlow {
 	
 
-	private final RetryOptions retryoptions = RetryOptions.newBuilder().setInitialInterval(Duration.ofSeconds(1))
-			.setMaximumInterval(Duration.ofSeconds(100)).setBackoffCoefficient(2).setMaximumAttempts(50000).build();
-	private final ActivityOptions options = ActivityOptions.newBuilder().setStartToCloseTimeout(Duration.ofSeconds(30))
+	private final RetryOptions retryoptions = RetryOptions.newBuilder()
+			.setInitialInterval(Duration.ofSeconds(1))
+			.setMaximumInterval(Duration.ofSeconds(5))
+			.setBackoffCoefficient(1)
+			.setMaximumAttempts(5)
+			.build();
+	
+	private final ActivityOptions options = ActivityOptions.newBuilder()
+			.setStartToCloseTimeout(Duration.ofSeconds(10))
 			.setRetryOptions(retryoptions).build();
 
 	private final Activity activity = Workflow.newActivityStub(Activity.class, options);
@@ -39,8 +45,8 @@ public class WorkflowImpl implements WorkFlow {
 		}
 
 		
-		Workflow.await(() -> isPaymentDone);
-		System.out.println("***** Please wait till we confirm delivery status");
+		//Workflow.await(() -> isPaymentDone);
+		//System.out.println("***** Please wait till we confirm delivery status");
 		
 //		isOrderDelivered = activity.setOrderDelivered();
 //		Workflow.await(() -> isOrderDelivered);

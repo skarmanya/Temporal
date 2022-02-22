@@ -1,5 +1,7 @@
 package com.clone.workflow.service;
 
+import java.time.Duration;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,8 +33,11 @@ public class OrderService {
 
 
 	public WorkFlow createWorkFlowConnection(String id) {
-		WorkflowOptions options = WorkflowOptions.newBuilder().setTaskQueue(WorkFlow.QUEUE_NAME)
-				.setWorkflowId("Order_" + id).build();
+		WorkflowOptions options = WorkflowOptions.newBuilder()
+				.setTaskQueue(WorkFlow.QUEUE_NAME)
+				.setWorkflowId("Order_" + id)
+				.setWorkflowTaskTimeout(Duration.ofSeconds(2))
+				.setWorkflowExecutionTimeout(Duration.ofSeconds(10)).build();
 		return workflowClient.newWorkflowStub(WorkFlow.class, options);
 	}
 
