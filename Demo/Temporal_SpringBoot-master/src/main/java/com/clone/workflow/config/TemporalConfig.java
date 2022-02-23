@@ -19,7 +19,7 @@ import io.temporal.worker.WorkerFactoryOptions;
 @Configuration
 public class TemporalConfig {
 
-	private String temporalServiceAddress = "172.20.127.67:7233";
+	private String temporalServiceAddress = "172.20.152.151:7233";
 
 	private String temporalNamespace = "temporal-system";
 
