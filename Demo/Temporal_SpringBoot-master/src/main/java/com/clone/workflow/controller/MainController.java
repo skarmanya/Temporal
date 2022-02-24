@@ -20,7 +20,16 @@ public class MainController {
 
 	@PostMapping("/startWorkflow")
 	public CartPojo createOrder(@RequestParam("id") String id, @RequestBody CartPojo cartDetails) {
-	 return orderService.placeOrder(id, cartDetails);
+	
+	long start_time = System.currentTimeMillis();
+				
+	 CartPojo cp = orderService.placeOrder(id, cartDetails);
+	 
+	 long end_time = System.currentTimeMillis();
+
+	 System.out.println("Time taken for flow " + String.valueOf(end_time-start_time) );
+	 
+	 return cp;
 		//return orderDetails.orderRepo;
 	}
 

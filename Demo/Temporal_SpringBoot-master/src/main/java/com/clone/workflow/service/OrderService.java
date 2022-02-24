@@ -36,8 +36,10 @@ public class OrderService {
 		WorkflowOptions options = WorkflowOptions.newBuilder()
 				.setTaskQueue(WorkFlow.QUEUE_NAME)
 				.setWorkflowId("Order_" + id)
-				.setWorkflowTaskTimeout(Duration.ofSeconds(2))
-				.setWorkflowExecutionTimeout(Duration.ofSeconds(10)).build();
+//				.setWorkflowTaskTimeout(Duration.ofSeconds(10))
+//				.setWorkflowExecutionTimeout(Duration.ofSeconds(10))
+				.build();
+		
 		return workflowClient.newWorkflowStub(WorkFlow.class, options);
 	}
 

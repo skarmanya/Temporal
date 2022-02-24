@@ -17,9 +17,9 @@ public class WorkflowImpl implements WorkFlow {
 
 	private final RetryOptions retryoptions = RetryOptions.newBuilder()
 			.setInitialInterval(Duration.ofSeconds(1))
-			.setMaximumInterval(Duration.ofSeconds(5))
+//			.setMaximumInterval(Duration.ofSeconds(10))
 			.setBackoffCoefficient(1)
-			.setMaximumAttempts(5)
+//			.setMaximumAttempts(5)
 			.build();
 	
 	private final ActivityOptions options = ActivityOptions.newBuilder()
@@ -30,19 +30,20 @@ public class WorkflowImpl implements WorkFlow {
 
 	OrderDetails orderDetails = new OrderDetails();
 
-	public boolean isOrderDelivered = false;
-	
 	public boolean isPaymentDone = false;
 
 	@Override
 	public CartPojo startApprovalWorkflow(String workflowId, CartPojo cartDetails) {
 		
+		//Activity-1
 		activity.placeOrder();
-
-		String responseFromPaymentService = activity.setPaymentDone(workflowId);
-		if(responseFromPaymentService.length() > 0) {
-			isPaymentDone = true;
-		}
+//
+//		//Activity-2
+//		String responseFromPaymentService = activity.setPaymentDone(workflowId);
+//		
+//		if(responseFromPaymentService.length() > 0) {
+//			isPaymentDone = true;
+//		}
 
 		
 		//Workflow.await(() -> isPaymentDone);
@@ -51,7 +52,7 @@ public class WorkflowImpl implements WorkFlow {
 //		isOrderDelivered = activity.setOrderDelivered();
 //		Workflow.await(() -> isOrderDelivered);
 		
-		cartDetails.setPaymentStatus(responseFromPaymentService);
+		cartDetails.setPaymentStatus("Payment Received");
 		
 		return cartDetails;
 		

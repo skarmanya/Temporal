@@ -1,4 +1,4 @@
-FROM openjdk:11
+FROM adoptopenjdk:11-jre-hotspot
 
 LABEL COMPANY="Publicis Sapient"
 LABEL APPLICATION="Proxy"

@@ -9,8 +9,8 @@ public interface Activity {
 	@ActivityMethod
 	void placeOrder();
 
-	@ActivityMethod
-	boolean setOrderDelivered();
+//	@ActivityMethod
+//	boolean setOrderDelivered();
 	
 	@ActivityMethod
 	String setPaymentDone(String id);
