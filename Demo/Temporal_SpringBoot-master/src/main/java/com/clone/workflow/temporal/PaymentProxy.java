@@ -1,11 +1,11 @@
 package com.clone.workflow.temporal;
 
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
-//@FeignClient(name="paymentproxy", url="localhost:9002")
-//public interface PaymentProxy {
-//	@GetMapping("/payment/{id}")
-//	public String confirmPayment(@PathVariable String id);
-//}
+@FeignClient(name="wiremock", url="http://wiremock:8080")
+public interface PaymentProxy {
+	@PostMapping("/items/cart")
+	public String makeCart();
+}

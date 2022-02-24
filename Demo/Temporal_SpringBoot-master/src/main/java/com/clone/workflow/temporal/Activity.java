@@ -12,6 +12,9 @@ public interface Activity {
 //	@ActivityMethod
 //	boolean setOrderDelivered();
 	
+//	@ActivityMethod
+//	String setPaymentDone(String id);
+	
 	@ActivityMethod
-	String setPaymentDone(String id);
+	void callMakeCart();
 }

@@ -37,10 +37,10 @@ public class WorkflowImpl implements WorkFlow {
 		
 		//Activity-1
 		activity.placeOrder();
-//
-//		//Activity-2
-//		String responseFromPaymentService = activity.setPaymentDone(workflowId);
-//		
+
+		//Activity-2
+		 activity.callMakeCart();
+		
 //		if(responseFromPaymentService.length() > 0) {
 //			isPaymentDone = true;
 //		}

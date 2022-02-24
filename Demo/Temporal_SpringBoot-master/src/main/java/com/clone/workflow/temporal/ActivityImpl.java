@@ -18,15 +18,21 @@ public class ActivityImpl implements Activity {
 //		return true;
 //	}
 //	
-//	@Autowired
-//	private PaymentProxy paymentProxy;
-//	
+	@Autowired
+	private PaymentProxy paymentProxy;
+	
+//	@Override
+//	public String setPaymentDone(String id) {
+//		String resp = "";
+//		//resp = paymentProxy.confirmPayment(id);
+//		//System.out.println("***** "+resp);
+//		return resp;
+//	}
+	
 	@Override
-	public String setPaymentDone(String id) {
-		String resp = "";
-		//resp = paymentProxy.confirmPayment(id);
-		//System.out.println("***** "+resp);
-		return resp;
+	public void callMakeCart() {
+		
+		
 	}
 
 }
