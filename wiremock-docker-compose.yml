@@ -5,4 +5,4 @@ services:
     container_name: wiremock
     image: ektabansal/wiremock:v2
     ports:
-      - '8080'
+      - '7080'
